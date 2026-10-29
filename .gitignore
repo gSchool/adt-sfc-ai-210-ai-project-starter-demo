@@ -1,0 +1,9 @@
+# Scratch is not a result.
+work/*
+!work/README.md
+!work/.gitkeep
+
+# If your real source material should not be committed, uncomment:
+# sources/*
+# !sources/README.md
+# !sources/SOURCES.md

@@ -31,14 +31,24 @@ That is setup. It is not meant to take an afternoon.
 
 ## Running a task — every time
 
-1. **Copy `templates/task.md` into `tasks/` as `NNNN-short-name.md`.** Ten lines. What the
-   task is, what a usable result includes, what it must not do.
-2. **Work in `work/`.**
-3. **Check the result** — `tools/check-output.sh work/yourfile.md`, then the four questions
-   in `AGENTS.md` section 4.
-4. **Move it to `output/`** and close the task file with what was decided and why.
+**You describe the task. The agent writes it down.** That order matters.
 
-Three touches. If a task needs more ceremony than that, it is probably more than one task.
+1. **Tell the agent what you want**, however loosely. In chat, in a sentence.
+2. **It writes `tasks/NNNN-short-name.md` before doing anything else** — what it understood
+   the task to be, what a usable result includes, what is out of bounds, and what it had to
+   assume. Then it stops.
+3. **You confirm or correct that file.** The cheapest moment in the process to catch a
+   misread, and it costs about thirty seconds.
+4. **It works in `work/`.**
+5. **Check before anything moves** — `tools/check-output.sh work/yourfile.md`, then the four
+   questions under *Nothing reaches `output/` unchecked* in `AGENTS.md`.
+6. **Accepted results go to `output/`**, and the task file closes with the outcome and the
+   reasoning.
+
+Your part is three touches: say what you want, confirm the write-up, accept the result. The
+record builds itself, which is why it actually gets built.
+
+If a task file is getting long, that usually means it is more than one task.
 
 ## When something smells
 
@@ -64,5 +74,5 @@ from. The slot exists now so adopting them means filling it rather than reorgani
 Nothing here is tool-specific. `CLAUDE.md` points at `AGENTS.md` so tools looking for either
 name read the same rules; add another pointer if yours looks for a third.
 
-`AGENTS.md` section 2 — what counts as an identifier worth replacing — is the part most
-worth making specific to your environment.
+*Take the least you need* in `AGENTS.md` — specifically, what counts as an identifier
+worth replacing — is the part most worth making specific to your environment.

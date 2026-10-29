@@ -5,7 +5,7 @@
 #
 # This is a net, not a guarantee. It catches the common, obvious cases. It does not know
 # your organization's identifier formats, and it cannot tell whether a name is a real
-# person. The gate in the four checks in AGENTS.md section 5 is what decides; this stops the clumsy
+# person. The gate in the four checks in AGENTS.md is what decides; this stops the clumsy
 # misses from getting that far.
 #
 # Exit 0 = nothing found. Exit 1 = findings. Exit 2 = bad usage.
@@ -46,10 +46,10 @@ scan "unfilled placeholder" '\[(NAME|ID|ORG|DATE|REDACTED)\]|TODO|FIXME|XXX'
 if [ -s "$TMP" ]; then
   cat "$TMP"
   echo
-  echo "Findings above. Resolve them, then run the four checks in AGENTS.md section 5."
+  echo "Findings above. Resolve them, then run the four checks in AGENTS.md."
   exit 1
 fi
 
 echo "No obvious findings."
-echo "This does NOT clear the file. Run the four checks in AGENTS.md section 5 before it moves to output/."
+echo "This does NOT clear the file. Run the four checks in AGENTS.md before it moves to output/."
 exit 0
